@@ -15,6 +15,6 @@ class MenuCategoriesTest extends TestCase
         $categories = factory(MenuCategory::class, 2)->createMany([]);
         $this->get('/api/v1/categories')
             ->assertStatus(200)
-            ->assertJson($categories->sortBy('order')->toArray());
+            ->assertJson($categories->sortBy('position')->toArray());
     }
 }

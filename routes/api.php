@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/categories', 'Menu\CategoriesController')->only(['index']);
+Route::get('/categories', 'Menu\CategoriesController@index');
+Route::get('/categories/{category}/positions', 'Menu\CategoriesController@positions');

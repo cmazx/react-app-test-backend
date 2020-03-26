@@ -6,9 +6,10 @@ use App\MenuCategory;
 use Faker\Generator as Faker;
 
 $factory->define(MenuCategory::class, function (Faker $faker) {
+
     return [
-        'name' => $faker->unique()->colorName,
-        'description' => $faker->unique()->text,
-        'order' => $faker->unique()->numberBetween(0, 127)
+        'name' => $faker->colorName . ' ' . $faker->randomElement(['Pizza', 'Drinks', 'Starters', ' Bread', 'Tea']),
+        'description' => $faker->text,
+        'position' => $faker->unique(false, 100)->numberBetween(0, 127)
     ];
 });

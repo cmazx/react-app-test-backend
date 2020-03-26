@@ -21,16 +21,16 @@ New category can be added. Name is required. Description is optional.
 
 ##### Positions
 Positions is something that can be bought by client. 
-Position always assigned to at least one category.
+Position must be assigned to category.
 ###### Positions list
 Position can be found by category or name.
 ###### Position update
-Position fields can be updated:
+Position properties can be updated:
  - image
  - name
  - description
  - status(active/inactive)
- - list of categories (at least 1)
+ - category
 ###### Position archieve
 Position can be archieved. 
 ###### Position create

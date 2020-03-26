@@ -17,8 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable(true);
-            $table->tinyInteger('order')->unique();
-            $table->index('order');
+            $table->tinyInteger('position')->unique();
         });
     }
 
