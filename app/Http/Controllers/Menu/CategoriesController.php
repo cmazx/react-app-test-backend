@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Menu;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\MenuCategory as MenuCategoryResource;
+use App\Http\Resources\MenuPosition;
 use App\MenuCategory;
 
 class CategoriesController extends Controller
@@ -17,8 +19,13 @@ class CategoriesController extends Controller
         $this->middleware('guest');
     }
 
-    public function index(){
-        return MenuCategory::ordered()->get();
+    public function index()
+    {
+        return MenuCategoryResource::collection(MenuCategory::sorted()->paginate());
     }
 
+    public function positions(MenuCategory $category)
+    {
+        return MenuPosition::collection($category->positions()->paginate());
+    }
 }
